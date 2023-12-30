@@ -37,8 +37,7 @@ class BorrowedBook(models.Model):
 
 class Profile(models.Model):
     account = models.OneToOneField(UserAccount, on_delete=models.CASCADE, null= True, blank= True)
-    # book = models.ManyToManyField(Book, null= True, blank= True)
-    borrowed_book = models.ManyToManyField(BorrowedBook, null= True, blank= True)
+    borrowed_book = models.ManyToManyField(BorrowedBook)
 
     def __str__(self):
         return f"Profile: {self.account}"
